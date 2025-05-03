@@ -1,0 +1,15 @@
+- hosts: localhost
+  gather_facts: true
+  tasks:
+    - name: Include role-security
+      include_role:
+        name: role-security
+      tags: role-security
+  become: true
+
+  vars:
+    security_fail2ban_enabled: true
+    security_autoupdate_enabled: true
+    ansible_os_family: Debian
+    ansible_distribution: Ubuntu
+
